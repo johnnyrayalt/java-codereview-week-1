@@ -9,6 +9,7 @@ import static org.junit.Assert.*;
 
 public class EventTest {
 
+//    GENERAL TESTS
     @Test
     public void newEvent_instantiatesCorrectly() throws Exception {
         Event testEvent = new Event();
@@ -52,7 +53,7 @@ public class EventTest {
         assertEquals(150, testEvent.setBookingFee());
     }
 
-
+//    GET FOOD PRICES AND OPTIONS TESTS
     @Test
     public void newEvent_getFoodPrices_setHashMap() {
         Event testEvent = new Event();
@@ -77,32 +78,33 @@ public class EventTest {
     public void newEvent_setFoodOption_optionMedium() {
         Event testEvent = new Event();
         testEvent.setFoodSelection("medium");
-        String setFoodSelectionSmall = "medium";
-        assertEquals(setFoodSelectionSmall, testEvent.getFood());
+        String setFoodSelectionMedium = "medium";
+        assertEquals(setFoodSelectionMedium, testEvent.getFood());
     }
 
     @Test
     public void newEvent_setFoodOption_optionLarge() {
         Event testEvent = new Event();
         testEvent.setFoodSelection("large");
-        String setFoodSelectionSmall = "large";
-        assertEquals(setFoodSelectionSmall, testEvent.getFood());
+        String setFoodSelectionLarge = "large";
+        assertEquals(setFoodSelectionLarge, testEvent.getFood());
     }
 
     @Test
     public void newEvent_setFoodOption_optionXL() {
         Event testEvent = new Event();
         testEvent.setFoodSelection("xl");
-        String setFoodSelectionSmall = "xl";
-        assertEquals(setFoodSelectionSmall, testEvent.getFood());
+        String setFoodSelectionXl = "xl";
+        assertEquals(setFoodSelectionXl, testEvent.getFood());
     }
 
+//    GET BEVERAGE PRICES AND OPTIONS TESTS
     @Test
     public void newEvent_getBeveragePrices_setHashMap() {
         Event testEvent = new Event();
         Map<String, Double> getBeverageOptions = new HashMap();
         getBeverageOptions.put("none", 0.00);
-        getBeverageOptions.put("nonalcoholic", 10.00);
+        getBeverageOptions.put("nonalcoholic", 300.00);
         getBeverageOptions.put("small bar", 500.00);
         getBeverageOptions.put("medium bar", 1000.00);
         getBeverageOptions.put("large bar", 2000.00);
@@ -130,24 +132,83 @@ public class EventTest {
     public void newEvent_setBeverageOption_optionMediumBar() {
         Event testEvent = new Event();
         testEvent.setBeverageSelection("medium bar");
-        String setBeverageSelectionSmall = "medium bar";
-        assertEquals(setBeverageSelectionSmall, testEvent.getBeverage());
+        String setBeverageSelectionMedium = "medium bar";
+        assertEquals(setBeverageSelectionMedium, testEvent.getBeverage());
     }
 
     @Test
     public void newEvent_setBeverageOption_optionLargeBar() {
         Event testEvent = new Event();
         testEvent.setBeverageSelection("large bar");
-        String setBeverageSelectionSmall = "large bar";
-        assertEquals(setBeverageSelectionSmall, testEvent.getBeverage());
+        String setBeverageSelectionLarge= "large bar";
+        assertEquals(setBeverageSelectionLarge, testEvent.getBeverage());
     }
 
     @Test
     public void newEvent_setBeverageOption_optionXLBar() {
         Event testEvent = new Event();
         testEvent.setBeverageSelection("xl bar");
-        String setBeverageSelectionSmall = "xl bar";
-        assertEquals(setBeverageSelectionSmall, testEvent.getBeverage());
+        String setBeverageSelectionXl= "xl bar";
+        assertEquals(setBeverageSelectionXl, testEvent.getBeverage());
+    }
+
+
+//    GET ENTERTAINMENT OPTIONS AND PRICES
+    @Test
+    public void newEvent_getEntertainmentPrices_setHashMap() {
+        Event testEvent = new Event();
+        Map<String, Double> getEntertainmentOptions = new HashMap();
+        getEntertainmentOptions.put("none", 0.00);
+        getEntertainmentOptions.put("self provided", 0.00);
+        getEntertainmentOptions.put("DJ", 300.00);
+        getEntertainmentOptions.put("KJ", 200.00);
+        getEntertainmentOptions.put("live band", 1200.00);
+        assertEquals(getEntertainmentOptions, testEvent.getEntertainmentOprionsAndPrices());
+    }
+
+    @Test
+    public void newEvent_setEntertainmentOption_optionSelfProvided() {
+        Event testEvent = new Event();
+        testEvent.setEntertainmentSelection("self provided");
+        String setEntertainmentSelectionSelfProvided = "self provided";
+        assertEquals(setEntertainmentSelectionSelfProvided, testEvent.getEntertainment());
+    }
+
+    @Test
+    public void newEvent_setEntertainmentOption_optionDJ() {
+        Event testEvent = new Event();
+        testEvent.setEntertainmentSelection("DJ");
+        String setEntertainmentSelectionDJ= "DJ";
+        assertEquals(setEntertainmentSelectionDJ, testEvent.getEntertainment());
+    }
+
+    @Test
+    public void newEvent_setEntertainmentOption_optionKJ() {
+        Event testEvent = new Event();
+        testEvent.setEntertainmentSelection("KJ");
+        String setEntertainmentSelectionKJ= "KJ";
+        assertEquals(setEntertainmentSelectionKJ, testEvent.getEntertainment());
+    }
+
+    @Test
+    public void newEvent_setEntertainmentOption_optionLiveBand() {
+        Event testEvent = new Event();
+        testEvent.setEntertainmentSelection("live band");
+        String setEntertainmentSelectionLiveBand= "live band";
+        assertEquals(setEntertainmentSelectionLiveBand, testEvent.getEntertainment());
+    }
+
+//    TOTAL PRICE TESTS
+    @Test
+    public void newEvent_SetPrices() {
+        Event testEvent = new Event();
+        testEvent.setGuests(10);
+        testEvent.setFoodSelection("medium");
+        testEvent.setBeverageSelection("large bar");
+        testEvent.setEntertainmentSelection("DJ");
+        testEvent.setFinalPrice();
+        Double expectedOutcome = 2900.00;
+        assertEquals(expectedOutcome, testEvent.getPrice());
     }
 
 }

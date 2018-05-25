@@ -12,6 +12,8 @@ public class Event {
     private int bookingFee;
     private Map<String, Double> foodItemsAndPrices;
     private Map<String, Double> beverageItemsAndPrices;
+    private Map<String, Double> entertainmentOprionsAndPrices;
+    private Double price;
 
 
     public Event() {
@@ -19,6 +21,7 @@ public class Event {
         this.food = "none";
         this.beverage = "none";
         this.entertainment = "none";
+        this.price = 0.00;
         this.bookingFee = 150;
         this.foodItemsAndPrices = new HashMap();
         foodItemsAndPrices.put("none", 0.00);
@@ -28,11 +31,17 @@ public class Event {
         foodItemsAndPrices.put("xl", 35.00);
         this.beverageItemsAndPrices = new HashMap();
         beverageItemsAndPrices.put("none", 0.00);
-        beverageItemsAndPrices.put("nonalcoholic", 10.00);
+        beverageItemsAndPrices.put("nonalcoholic", 300.00);
         beverageItemsAndPrices.put("small bar", 500.00);
         beverageItemsAndPrices.put("medium bar", 1000.00);
         beverageItemsAndPrices.put("large bar", 2000.00);
         beverageItemsAndPrices.put("xl bar", 4000.00);
+        this.entertainmentOprionsAndPrices = new HashMap();
+        entertainmentOprionsAndPrices.put("none", 0.00);
+        entertainmentOprionsAndPrices.put("self provided", 0.00);
+        entertainmentOprionsAndPrices.put("DJ", 300.00);
+        entertainmentOprionsAndPrices.put("KJ", 200.00);
+        entertainmentOprionsAndPrices.put("live band", 1200.00);
     }
 
     public int getGuests() {
@@ -49,6 +58,10 @@ public class Event {
 
     public String getEntertainment() {
         return this.entertainment;
+    }
+
+    public Double getPrice() {
+        return this.price;
     }
 
     public int setGuests(int userInputNumberOfGuests) {
@@ -75,4 +88,18 @@ public class Event {
         this.beverage = userInputBeverageSelection;
     }
 
+    public Map<String, Double> getEntertainmentOprionsAndPrices() {
+        return this.entertainmentOprionsAndPrices;
+    }
+
+    public void setEntertainmentSelection(String userInputEntertainmetSelection) {
+        this.entertainment = userInputEntertainmetSelection;
+    }
+
+    public void setFinalPrice() {
+        price += guests * foodItemsAndPrices.get(food) +
+                beverageItemsAndPrices.get(beverage) +
+                entertainmentOprionsAndPrices.get(entertainment) +
+                bookingFee;
+    }
 }
