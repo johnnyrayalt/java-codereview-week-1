@@ -110,4 +110,44 @@ public class EventTest {
         assertEquals(getBeverageOptions, testEvent.getBeverageItemsAndPrices());
     }
 
+    @Test
+    public void newEvent_setBeverageOption_optionNonalcoholic() {
+        Event testEvent = new Event();
+        testEvent.setBeverageSelection("nonalcoholic");
+        String setBeverageSelectionSmall = "nonalcoholic";
+        assertEquals(setBeverageSelectionSmall, testEvent.getBeverage());
+    }
+
+    @Test
+    public void newEvent_setBeverageOption_optionSmallBar() {
+        Event testEvent = new Event();
+        testEvent.setBeverageSelection("small bar");
+        String setBeverageSelectionSmall = "small bar";
+        assertEquals(setBeverageSelectionSmall, testEvent.getBeverage());
+    }
+
+    @Test
+    public void newEvent_setBeverageOption_optionMediumBar() {
+        Event testEvent = new Event();
+        testEvent.setBeverageSelection("medium bar");
+        String setBeverageSelectionSmall = "medium bar";
+        assertEquals(setBeverageSelectionSmall, testEvent.getBeverage());
+    }
+
+    @Test
+    public void newEvent_setBeverageOption_optionLargeBar() {
+        Event testEvent = new Event();
+        testEvent.setBeverageSelection("large bar");
+        String setBeverageSelectionSmall = "large bar";
+        assertEquals(setBeverageSelectionSmall, testEvent.getBeverage());
+    }
+
+    @Test
+    public void newEvent_setBeverageOption_optionXLBar() {
+        Event testEvent = new Event();
+        testEvent.setBeverageSelection("xl bar");
+        String setBeverageSelectionSmall = "xl bar";
+        assertEquals(setBeverageSelectionSmall, testEvent.getBeverage());
+    }
+
 }
