@@ -54,10 +54,46 @@ public class EventTest {
 
 
     @Test
-    public void newEvent_getFoodPrices_optionOne_isSmall() {
+    public void newEvent_getFoodPrices_setHashMap() {
         Event testEvent = new Event();
-        Map<String, Double> getFoodOptionsSmall= new HashMap();
-        getFoodOptionsSmall.put("small", 300.00);
-        assertEquals(getFoodOptionsSmall, testEvent.getFoodItemsAndPrices());
+        Map<String, Double> getFoodOptions = new HashMap();
+        getFoodOptions.put("none", 0.00);
+        getFoodOptions.put("small", 300.00);
+        getFoodOptions.put("medium", 600.00);
+        getFoodOptions.put("large", 1500.00);
+        getFoodOptions.put("xl", 3000.00);
+        assertEquals(getFoodOptions, testEvent.getFoodItemsAndPrices());
+    }
+
+    @Test
+    public void newEvent_setFoodOption_optionSmall() {
+        Event testEvent = new Event();
+        testEvent.setFoodSelection("small");
+        String setFoodSelectionSmall = "small";
+        assertEquals(setFoodSelectionSmall, testEvent.getFood());
+    }
+
+    @Test
+    public void newEvent_setFoodOption_optionMedium() {
+        Event testEvent = new Event();
+        testEvent.setFoodSelection("medium");
+        String setFoodSelectionSmall = "medium";
+        assertEquals(setFoodSelectionSmall, testEvent.getFood());
+    }
+
+    @Test
+    public void newEvent_setFoodOption_optionLarge() {
+        Event testEvent = new Event();
+        testEvent.setFoodSelection("large");
+        String setFoodSelectionSmall = "large";
+        assertEquals(setFoodSelectionSmall, testEvent.getFood());
+    }
+
+    @Test
+    public void newEvent_setFoodOption_optionXL() {
+        Event testEvent = new Event();
+        testEvent.setFoodSelection("xl");
+        String setFoodSelectionSmall = "xl";
+        assertEquals(setFoodSelectionSmall, testEvent.getFood());
     }
 }

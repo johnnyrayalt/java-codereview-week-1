@@ -22,6 +22,9 @@ public class Event {
         this.foodItemsAndPrices = new HashMap();
         foodItemsAndPrices.put("none", 0.00);
         foodItemsAndPrices.put("small", 300.00);
+        foodItemsAndPrices.put("medium", 600.00);
+        foodItemsAndPrices.put("large", 1500.00);
+        foodItemsAndPrices.put("xl", 3000.00);
 
     }
 
@@ -50,6 +53,10 @@ public class Event {
     }
 
     public Map<String, Double> getFoodItemsAndPrices() {
-        return foodItemsAndPrices;
+        return this.foodItemsAndPrices;
+    }
+
+    public void setFoodSelection(String userInputFoodSelection) {
+        this.food = userInputFoodSelection;
     }
 }
