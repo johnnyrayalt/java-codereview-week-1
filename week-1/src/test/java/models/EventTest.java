@@ -23,4 +23,10 @@ public class EventTest {
         Event testEvent = new Event();
         assertEquals("none", testEvent.getFood());
     }
+
+    @Test
+    public void newEvent_typeOfBeverage_isNone() {
+        Event testEvent = new Event();
+        assertEquals("none", testEvent.getBeverage());
+    }
 }
