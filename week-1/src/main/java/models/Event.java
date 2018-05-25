@@ -39,8 +39,8 @@ public class Event {
         this.entertainmentOprionsAndPrices = new HashMap();
         entertainmentOprionsAndPrices.put("none", 0.00);
         entertainmentOprionsAndPrices.put("self provided", 0.00);
-        entertainmentOprionsAndPrices.put("DJ", 300.00);
-        entertainmentOprionsAndPrices.put("KJ", 200.00);
+        entertainmentOprionsAndPrices.put("dj", 300.00);
+        entertainmentOprionsAndPrices.put("kj", 200.00);
         entertainmentOprionsAndPrices.put("live band", 1200.00);
     }
 

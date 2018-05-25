@@ -160,8 +160,8 @@ public class EventTest {
         Map<String, Double> getEntertainmentOptions = new HashMap();
         getEntertainmentOptions.put("none", 0.00);
         getEntertainmentOptions.put("self provided", 0.00);
-        getEntertainmentOptions.put("DJ", 300.00);
-        getEntertainmentOptions.put("KJ", 200.00);
+        getEntertainmentOptions.put("dj", 300.00);
+        getEntertainmentOptions.put("kj", 200.00);
         getEntertainmentOptions.put("live band", 1200.00);
         assertEquals(getEntertainmentOptions, testEvent.getEntertainmentOprionsAndPrices());
     }
@@ -177,16 +177,16 @@ public class EventTest {
     @Test
     public void newEvent_setEntertainmentOption_optionDJ() {
         Event testEvent = new Event();
-        testEvent.setEntertainmentSelection("DJ");
-        String setEntertainmentSelectionDJ= "DJ";
+        testEvent.setEntertainmentSelection("dj");
+        String setEntertainmentSelectionDJ= "dj";
         assertEquals(setEntertainmentSelectionDJ, testEvent.getEntertainment());
     }
 
     @Test
     public void newEvent_setEntertainmentOption_optionKJ() {
         Event testEvent = new Event();
-        testEvent.setEntertainmentSelection("KJ");
-        String setEntertainmentSelectionKJ= "KJ";
+        testEvent.setEntertainmentSelection("kj");
+        String setEntertainmentSelectionKJ= "kj";
         assertEquals(setEntertainmentSelectionKJ, testEvent.getEntertainment());
     }
 
@@ -205,7 +205,7 @@ public class EventTest {
         testEvent.setGuests(10);
         testEvent.setFoodSelection("medium");
         testEvent.setBeverageSelection("large bar");
-        testEvent.setEntertainmentSelection("DJ");
+        testEvent.setEntertainmentSelection("dj");
         testEvent.setFinalPrice();
         Double expectedOutcome = 2900.00;
         assertEquals(expectedOutcome, testEvent.getPrice());
