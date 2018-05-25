@@ -12,7 +12,7 @@ public class Event {
     private int bookingFee;
     private Map<String, Double> foodItemsAndPrices;
     private Map<String, Double> beverageItemsAndPrices;
-    private Map<String, Double> entertainmentOprionsAndPrices;
+    private Map<String, Double> entertainmentOptionsAndPrices;
     private Double price;
 
 
@@ -36,12 +36,12 @@ public class Event {
         beverageItemsAndPrices.put("medium bar", 1000.00);
         beverageItemsAndPrices.put("large bar", 2000.00);
         beverageItemsAndPrices.put("xl bar", 4000.00);
-        this.entertainmentOprionsAndPrices = new HashMap();
-        entertainmentOprionsAndPrices.put("none", 0.00);
-        entertainmentOprionsAndPrices.put("self provided", 0.00);
-        entertainmentOprionsAndPrices.put("dj", 300.00);
-        entertainmentOprionsAndPrices.put("kj", 200.00);
-        entertainmentOprionsAndPrices.put("live band", 1200.00);
+        this.entertainmentOptionsAndPrices = new HashMap();
+        entertainmentOptionsAndPrices.put("none", 0.00);
+        entertainmentOptionsAndPrices.put("self provided", 0.00);
+        entertainmentOptionsAndPrices.put("dj", 300.00);
+        entertainmentOptionsAndPrices.put("kj", 200.00);
+        entertainmentOptionsAndPrices.put("live band", 1200.00);
     }
 
     public int getGuests() {
@@ -64,8 +64,8 @@ public class Event {
         return this.price;
     }
 
-    public int setGuests(int userInputNumberOfGuests) {
-        return this.guests = userInputNumberOfGuests;
+    public void setGuests(int userInputNumberOfGuests) {
+        this.guests = userInputNumberOfGuests;
     }
 
     public int setBookingFee(){
@@ -89,17 +89,17 @@ public class Event {
     }
 
     public Map<String, Double> getEntertainmentOprionsAndPrices() {
-        return this.entertainmentOprionsAndPrices;
+        return this.entertainmentOptionsAndPrices;
     }
 
     public void setEntertainmentSelection(String userInputEntertainmetSelection) {
         this.entertainment = userInputEntertainmetSelection;
     }
 
-    public void setFinalPrice() {
-        price += guests * foodItemsAndPrices.get(food) +
+    public Double setFinalPrice() {
+        return price += guests * foodItemsAndPrices.get(food) +
                 beverageItemsAndPrices.get(beverage) +
-                entertainmentOprionsAndPrices.get(entertainment) +
+                entertainmentOptionsAndPrices.get(entertainment) +
                 bookingFee;
     }
 }
