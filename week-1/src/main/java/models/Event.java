@@ -1,5 +1,8 @@
 package models;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Event {
 
     private int guests;
@@ -7,6 +10,7 @@ public class Event {
     private String beverage;
     private String entertainment;
     private int bookingFee;
+    private Map<String, Double> foodItemsAndPrices;
 
 
     public Event() {
@@ -15,6 +19,10 @@ public class Event {
         this.beverage = "none";
         this.entertainment = "none";
         this.bookingFee = 150;
+        this.foodItemsAndPrices = new HashMap();
+        foodItemsAndPrices.put("none", 0.00);
+        foodItemsAndPrices.put("small", 300.00);
+
     }
 
     public int getGuests() {
@@ -41,4 +49,7 @@ public class Event {
         return this.bookingFee;
     }
 
+    public Map<String, Double> getFoodItemsAndPrices() {
+        return foodItemsAndPrices;
+    }
 }

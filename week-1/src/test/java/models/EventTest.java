@@ -2,6 +2,9 @@ package models;
 
 import org.junit.Test;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static org.junit.Assert.*;
 
 public class EventTest {
@@ -47,5 +50,14 @@ public class EventTest {
     public void newEvent_setBookingFee_is150() {
         Event testEvent = new Event();
         assertEquals(150, testEvent.setBookingFee());
+    }
+
+
+    @Test
+    public void newEvent_getFoodPrices_optionOne_isSmall() {
+        Event testEvent = new Event();
+        Map<String, Double> getFoodOptionsSmall= new HashMap();
+        getFoodOptionsSmall.put("small", 300.00);
+        assertEquals(getFoodOptionsSmall, testEvent.getFoodItemsAndPrices());
     }
 }
