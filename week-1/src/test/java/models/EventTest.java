@@ -35,4 +35,11 @@ public class EventTest {
         Event testEvent = new Event();
         assertEquals("none", testEvent.getEntertainment());
     }
+
+    @Test
+    public void newEvent_setGuests_is1() {
+        Event testEvent = new Event();
+        int userInputNumberOfGuests = 1;;
+        assertEquals(1, testEvent.setGuests(userInputNumberOfGuests));
+    }
 }

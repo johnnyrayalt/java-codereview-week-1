@@ -16,18 +16,23 @@ public class Event {
     }
 
     public int getGuests() {
-        return guests;
+        return this.guests;
     }
 
     public String getFood() {
-        return food;
+        return this.food;
     }
 
     public String getBeverage() {
-        return beverage;
+        return this.beverage;
     }
 
     public String getEntertainment() {
-        return entertainment;
+        return this.entertainment;
     }
+
+    public int setGuests(int userInputNumberOfGuests) {
+        return this.guests = userInputNumberOfGuests;
+    }
+
 }
