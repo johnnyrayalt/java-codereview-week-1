@@ -2,10 +2,6 @@ plugins {
     id 'java'
 }
 
-plugins {
-    id 'java'
-}
-
 group 'com.epicodus.week1'
 version '1.0-SNAPSHOT'
 
