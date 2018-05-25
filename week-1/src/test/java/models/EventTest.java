@@ -17,4 +17,10 @@ public class EventTest {
         Event testEvent = new Event();
         assertEquals(0, testEvent.getGuests());
     }
+
+    @Test
+    public void newEvent_typeOfFood_isNone() {
+        Event testEvent = new Event();
+        assertEquals("none", testEvent.getFood());
+    }
 }
