@@ -11,6 +11,7 @@ public class Event {
     private String entertainment;
     private int bookingFee;
     private Map<String, Double> foodItemsAndPrices;
+    private Map<String, Double> beverageItemsAndPrices;
 
 
     public Event() {
@@ -21,11 +22,17 @@ public class Event {
         this.bookingFee = 150;
         this.foodItemsAndPrices = new HashMap();
         foodItemsAndPrices.put("none", 0.00);
-        foodItemsAndPrices.put("small", 300.00);
-        foodItemsAndPrices.put("medium", 600.00);
-        foodItemsAndPrices.put("large", 1500.00);
-        foodItemsAndPrices.put("xl", 3000.00);
-
+        foodItemsAndPrices.put("small", 50.00);
+        foodItemsAndPrices.put("medium", 45.00);
+        foodItemsAndPrices.put("large", 40.00);
+        foodItemsAndPrices.put("xl", 35.00);
+        this.beverageItemsAndPrices = new HashMap();
+        beverageItemsAndPrices.put("none", 0.00);
+        beverageItemsAndPrices.put("nonalcoholic", 10.00);
+        beverageItemsAndPrices.put("small bar", 500.00);
+        beverageItemsAndPrices.put("medium bar", 1000.00);
+        beverageItemsAndPrices.put("large bar", 2000.00);
+        beverageItemsAndPrices.put("xl bar", 4000.00);
     }
 
     public int getGuests() {
@@ -59,4 +66,13 @@ public class Event {
     public void setFoodSelection(String userInputFoodSelection) {
         this.food = userInputFoodSelection;
     }
+
+    public Map<String, Double> getBeverageItemsAndPrices() {
+        return this.beverageItemsAndPrices;
+    }
+
+    public void setBeverageSelection(String userInputBeverageSelection) {
+        this.beverage = userInputBeverageSelection;
+    }
+
 }

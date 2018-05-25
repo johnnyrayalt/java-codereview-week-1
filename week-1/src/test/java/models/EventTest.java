@@ -58,10 +58,10 @@ public class EventTest {
         Event testEvent = new Event();
         Map<String, Double> getFoodOptions = new HashMap();
         getFoodOptions.put("none", 0.00);
-        getFoodOptions.put("small", 300.00);
-        getFoodOptions.put("medium", 600.00);
-        getFoodOptions.put("large", 1500.00);
-        getFoodOptions.put("xl", 3000.00);
+        getFoodOptions.put("small", 50.00);
+        getFoodOptions.put("medium", 45.00);
+        getFoodOptions.put("large", 40.00);
+        getFoodOptions.put("xl", 35.00);
         assertEquals(getFoodOptions, testEvent.getFoodItemsAndPrices());
     }
 
@@ -96,4 +96,18 @@ public class EventTest {
         String setFoodSelectionSmall = "xl";
         assertEquals(setFoodSelectionSmall, testEvent.getFood());
     }
+
+    @Test
+    public void newEvent_getBeveragePrices_setHashMap() {
+        Event testEvent = new Event();
+        Map<String, Double> getBeverageOptions = new HashMap();
+        getBeverageOptions.put("none", 0.00);
+        getBeverageOptions.put("nonalcoholic", 10.00);
+        getBeverageOptions.put("small bar", 500.00);
+        getBeverageOptions.put("medium bar", 1000.00);
+        getBeverageOptions.put("large bar", 2000.00);
+        getBeverageOptions.put("xl bar", 4000.00);
+        assertEquals(getBeverageOptions, testEvent.getBeverageItemsAndPrices());
+    }
+
 }
