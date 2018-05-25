@@ -42,4 +42,10 @@ public class EventTest {
         int userInputNumberOfGuests = 1;;
         assertEquals(1, testEvent.setGuests(userInputNumberOfGuests));
     }
+
+    @Test
+    public void newEvent_setBookingFee_is150() {
+        Event testEvent = new Event();
+        assertEquals(150, testEvent.setBookingFee());
+    }
 }

@@ -6,6 +6,7 @@ public class Event {
     private String food;
     private String beverage;
     private String entertainment;
+    private int bookingFee;
 
 
     public Event() {
@@ -13,6 +14,7 @@ public class Event {
         this.food = "none";
         this.beverage = "none";
         this.entertainment = "none";
+        this.bookingFee = 150;
     }
 
     public int getGuests() {
@@ -33,6 +35,10 @@ public class Event {
 
     public int setGuests(int userInputNumberOfGuests) {
         return this.guests = userInputNumberOfGuests;
+    }
+
+    public int setBookingFee(){
+        return this.bookingFee;
     }
 
 }
